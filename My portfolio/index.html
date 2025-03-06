@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+       
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1A237E, #FFD700);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #880e4f;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #6a1b9a;
+        }
+        p {
+            color: #6a1b9a;
+            font-weight: 400;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background: #ba68c8;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        .button:hover {
+            background: #ab47bc;
+        }
+        .education, .skills, .experience, .projects, .profiles {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3e5f5;
+            border-radius: 10px;
+        }
+        .skill-bar {
+            background: #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .skill-fill {
+            background: #ba68c8;
+            height: 20px;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 5px;
+            color: white;
+            font-weight: 600;
+        }
+        .experience-card, .project-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            text-align: left;
+            position: relative;
+        }
+        .experience-card h3, .project-card h3 {
+            margin: 5px 0;
+            color: #4a148c;
+        }
+        .experience-card p, .project-card p {
+            margin: 2px 0;
+            font-weight: 400;
+        }
+        .project-card img {
+            display: none;
+            width: 100%;
+            max-height: 200px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .project-card:hover img {
+            display: block;
+        }
+        .profiles a {
+            display: block;
+            margin: 10px auto;
+            text-decoration: none;
+        }
+        .profiles img {
+            width: 50px;
+            height: 50px;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, white, white);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1, h2, h3, p {
+            animation: slideUp 1s ease-in-out;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background: #ba68c8;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            background: #ab47bc;
+            transform: scale(1.1);
+        }
+        .education, .skills, .experience, .projects, .profiles {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3e5f5;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        .skill-bar {
+            background: #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .skill-fill {
+            background: #ba68c8;
+            height: 20px;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 5px;
+            color: white;
+            font-weight: 600;
+            width: 0;
+            animation: fillSkill 2s ease-in-out forwards;
+        }
+        @keyframes fillSkill {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .skill-bar:hover .skill-fill {
+            animation: bounceSkill 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes bounceSkill {
+            from { transform: scaleY(1); }
+            to { transform: scaleY(1.1); }
+        }
+        @keyframes fillSkill {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .experience-card, .project-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+        .experience-card:hover, .project-card:hover {
+            transform: scale(1.05);
+        }
+        .profiles a img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .profiles a img:hover {
+            transform: rotate(360deg);
+        }
+        .education, .skills, .experience, .projects, .profiles {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3e5f5;
+            border-radius: 10px;
+        }
+        
+    
+        .experience-card, .project-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            text-align: left;
+            position: relative;
+        }
+        .experience-card h3, .project-card h3 {
+            margin: 5px 0;
+            color: #4a148c;
+        }
+        .experience-card p, .project-card p {
+            margin: 2px 0;
+            font-weight: 400;
+        }
+        .project-card img {
+            display: none;
+            width: 100%;
+            max-height: 200px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .project-card:hover img {
+            display: block;
+        }
+        .profiles a {
+            display: block;
+            margin: 10px auto;
+            text-decoration: none;
+        }
+        .profiles img {
+            width: 50px;
+            height: 50px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .achievements {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3e5f5;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        .achievement-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+        .achievement-card:hover {
+            transform: scale(1.1);
+        }
+        .achievement-card h3 {
+            margin: 5px 0;
+            color: #4a148c;
+        }
+        .achievement-card p {
+            margin: 2px 0;
+            font-weight: 400;
+        }
+      
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey There!!</h1>
+        <h1>I Am Harshini</h1>
+        <p>Hi! I'm a web developer passionate about creating beautiful and functional websites.</p>
+        <a href="https://drive.google.com/file/d/1576Kg5HUghh1kS1oh2QlZ2T3nwawg_C9/view?usp=sharing" class="button">Download CV</a>
+        <div class="education">
+            <h2>Education</h2>
+            <h3>School</h3>
+            <p>10th Grade - VMHSS School, Ramanathapuram</p>
+            <p>12th Grade - VMHSS School, Ramanathapuram</p>
+            <h3>College</h3>
+            <p>Bachelor's Degree in Information Technology - PSNACET</p>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%">JAVA - 90%</div></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%">HTML - 90%</div></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%">JavaScript - 75%</div></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 80%">CSS - 80%</div></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 70%">REACT JS - 70%</div></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%">PYTHON - 75%</div></div>
+        </div>
+       
+        <div class="experience">
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3>JAVA DEVELOPER</h3>
+                <p><strong>Company:</strong> OCTANET Solutions</p>
+                <p><strong>Duration:</strong> Jul 2024 - Aug 2024</p>
+                <p>Developed an ATM machine simulation using Java and Spring Boot.</p>
+            </div>
+            <div class="experience-card">
+                <h3>CyberSecurity Intern</h3>
+                <p><strong>Company:</strong>Cisco </p>
+                <p><strong>Duration:</strong> Jul 2023 - Sept 2023</p>
+                <p>Applied theoretical knowledge in CyberSecurity through Virtual internship</p>
+        
+            </div>
+            <div class="experience-card">
+                <h3>PYTHON DEVELOPER</h3>
+                <p><strong>Company:</strong> OCTANET</p>
+                <p><strong>Duration:</strong> Jul 2024 - Sept 2024</p>
+                <p>Developed an AI-powered chatbot using Python and Flask.</p>
+        
+            </div>
+        </div>
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>CHAT BOT</h3>
+                <p>I developed a web-based chatbot using Python, designed to provide automated responses to user queries. The project was built using Flask/Django for the backend and HTML, CSS, and JavaScript for the frontend. The chatbot interacts with users in real time, making conversations smooth and engaging. It can be integrated into websites to assist users with basic inquiries.</p>
+                <img src="Screenshot 2025-03-05 114626.png" alt="Chatbot Output">
+            </div>
+            <div class="project-card">
+                <h3>Birthday Bumps</h3>
+                <p> Built a user-friendly birthday reminder platform using HTML, CSS, and
+                    JavaScript, managing over 100 simulated users. Implemented responsive
+                    design to ensure 100% compatibility across devices.</p>
+                <img src="Screenshot (110).png" alt="AI Chatbot Output">
+            </div>
+            <div class="project-card">
+                <h3>Real time Sign language and audio conversion using AI</h3>
+                <p>In a Sign Language Translator, Convolutional Neural Networks (CNNs) play a key role in recognizing and interpreting hand gestures by processing images captured from a camera</p>
+                <img src="WhatsApp Image 2025-03-01 at 7.12.00 PM.jpeg" alt="Website Preview">
+            </div>
+            
+
+        </div>
+        <div class="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Secured top 5% in LeetCode Weekly Contest</li>
+                <li>Completed 500+ coding problems on various platforms</li>
+                <li>Certified Python Essentials from Cisco</li>
+                <li>Won 1st place in a web development competition</li>
+                <li>Participated in the SIH 23</li>
+            </ul>
+        </div>
+        <div class="profiles">
+            <h2>Connect with Me</h2>
+            <a href="https://www.geeksforgeeks.org/user/harshirakdgy/"><img src="gfg.png" alt="GeeksforGeeks"></a>
+            <a href="https://leetcode.com/u/Harshini15R/"><img src="LeetCode_logo_black.png" alt="LeetCode"></a>
+            <a href="https://www.hackerrank.com/profile/harshinir21it"><img src="HackerRank_logo.png" alt="HackerRank"></a>
+            <a href="https://www.linkedin.com/in/harshi123"><img src="LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+        </div>
+
+    </div>
+        
+    </div>
+</div>
+</div>
+    
+    
+    
+    
+
+</body>
+</html>
